@@ -34,7 +34,7 @@ const newTicket = () => {
       <h1>Create a ticket</h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label>Title</label>
+          <label>Title:</label>
           <input
             type="text"
             value={title}
