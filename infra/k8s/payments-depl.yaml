@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payments
-          image: us.gcr.io/ticketing-dev-410715/payments
+          image: zarevv/payments
           env:
             - name: JWT_KEY
               valueFrom:

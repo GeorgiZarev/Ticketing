@@ -1,12 +1,12 @@
 apiVersion: skaffold/v4beta8
 kind: Config
 build:
-  # local:
-  #   push: false
-  googleCloudBuild:
-    projectId: ticketing-dev-410715
+  local:
+    push: false
+  # googleCloudBuild:
+  #   projectId: ticketing-dev-410715
   artifacts:
-    - image: us.gcr.io/ticketing-dev-410715/auth
+    - image: zarevv/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -14,7 +14,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-410715/client
+    - image: zarevv/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -22,7 +22,7 @@ build:
         manual:
           - src: "**/*.js"
             dest: .
-    - image: us.gcr.io/ticketing-dev-410715/tickets
+    - image: zarevv/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile
@@ -30,7 +30,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-410715/orders
+    - image: zarevv/orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -38,7 +38,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-410715/expiration
+    - image: zarevv/expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -46,7 +46,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-410715/payments
+    - image: zarevv/payments
       context: payments
       docker:
         dockerfile: Dockerfile
